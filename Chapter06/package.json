@@ -1,0 +1,26 @@
+{
+  "name": "fastify-restaurant-api",
+  "version": "1.0.0",
+  "description": "Node.js Cookbook: Chapter 6 - Working with Web Framework",
+  "type": "module",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-json-modules app.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "node",
+    "cookbook",
+    "packt"
+  ],
+  "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.22.2"
+  },
+  "devDependencies": {
+    "semistandard": "^17.0.0"
+  }
+}
