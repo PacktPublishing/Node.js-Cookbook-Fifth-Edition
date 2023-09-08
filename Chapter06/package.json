@@ -6,7 +6,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node --experimental-json-modules app.mjs",
+    "mongo:start": "docker run --rm -d -p 27017:27017 --name fastify-restaurant-api-db mongo:6",
+    "mongo:stop": "docker stop fastify-restaurant-api-db",
+    "start": "node --watch server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,7 +20,10 @@
   "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
   "license": "MIT",
   "dependencies": {
-    "fastify": "^4.22.2"
+    "@fastify/env": "^4.2.0",
+    "@fastify/mongodb": "^8.0.0",
+    "fastify": "^4.22.2",
+    "fastify-plugin": "^4.5.1"
   },
   "devDependencies": {
     "semistandard": "^17.0.0"

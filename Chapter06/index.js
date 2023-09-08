@@ -11,4 +11,5 @@ app.get('/', async function homeHandler () {
   };
 });
 
-await app.listen({ port: 3000 });
+const port = process.env.PORT || 3000;
+await app.listen({ host: '0.0.0.0', port });
