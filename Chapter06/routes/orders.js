@@ -1,8 +1,4 @@
 async function ordersPlugin (app, opts) {
-  async function notImplemented (request, reply) {
-    throw new Error('Not implemented');
-  }
-
   const orderJsonSchema = {
     type: 'object',
     required: ['table', 'dishes'],
@@ -86,10 +82,23 @@ async function ordersPlugin (app, opts) {
     }
   });
 
-  // todo
   app.patch('/orders/:orderId', {
     config: { auth: true },
-    handler: notImplemented
+    schema: {
+      params: {
+        orderId: { type: 'string', minLength: 24, maxLength: 24 }
+      }
+    },
+    handler: async function markOrderAsDone (request, reply) {
+      const orderId = request.params.orderId;
+      const modifiedCount = await this.source.markOrderAsDone(orderId);
+      if (modifiedCount === 0) {
+        reply.code(404);
+        throw new Error('Order not found');
+      }
+
+      reply.code(204);
+    }
   });
 }
 

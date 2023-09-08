@@ -52,7 +52,14 @@ async function datasourcePlugin (app, opts) {
       return result;
     },
 
-    async markOrderAsDone (orderId) { /* todo */ }
+    async markOrderAsDone (orderId) {
+      const collection = app.mongo.db.collection('orders');
+      const result = await collection.updateOne(
+        { _id: new app.mongo.ObjectId(orderId) },
+        { $set: { status: 'done' } }
+      );
+      return result.modifiedCount;
+    }
   });
 }
 
