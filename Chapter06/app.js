@@ -20,7 +20,7 @@ async function appPlugin (app, opts) {
   });
 
   app.addHook('onClose', async function hook (app) {
-    this.log.info(`onClose runs from file ${import.meta.url}`);
+    app.log.info(`onClose runs from file ${import.meta.url}`);
   });
 
   app.get('/', async function homeHandler () {

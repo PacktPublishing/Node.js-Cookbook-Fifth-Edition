@@ -1,15 +1,15 @@
 {
   "name": "fastify-restaurant-api",
   "version": "1.0.0",
-  "description": "Node.js Cookbook: Chapter 6 - Working with Web Framework",
+  "description": "Node.js Cookbook: Chapter 6",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "private": true,
   "scripts": {
     "mongo:start": "docker run --rm -d -p 27017:27017 --name fastify-restaurant-api-db mongo:6",
     "mongo:stop": "docker stop fastify-restaurant-api-db",
     "start": "node --watch server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/**.test.js"
   },
   "keywords": [
     "fastify",
@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "semistandard": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
