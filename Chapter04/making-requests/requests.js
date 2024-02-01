@@ -1,23 +1,22 @@
 const http = require('http');
+const https = require('https');
 
 // http.get('http://example.com', (res) => res.pipe(process.stdout));
 
 const payload = `{
-    "name": "Laddie",  
-    "breed": "Rough Collie" 
-    }`;
+"name": "Laddie",
+"breed": "Rough Collie" }`;
 
 const opts = {
   method: 'POST',
   hostname: 'postman-echo.com',
   path: '/post',
   headers: {
-    'Content-Type': 'application/json',
-    'Content-Length': Buffer.byteLength(payload)
+    'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload)
   }
 };
 
-const req = http.request(opts, (res) => {
+const req = https.request(opts, (res) => {
   process.stdout.write('Status Code: ' + res.statusCode + '\n');
   process.stdout.write('Body: ');
   res.pipe(process.stdout);

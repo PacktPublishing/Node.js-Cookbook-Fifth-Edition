@@ -1,18 +1,15 @@
 async function performPostRequest () {
   // Specify the URL for the POST request
   const url = 'https://postman-echo.com/post';
+
   // Data to be sent in the POST request
-  const postData = {
-    name: 'Laddie',
-    breed: 'Rough Collie'
-  };
+  const postData = { name: 'Laddie', breed: 'Rough Collie' };
+
   try {
     // Use the fetch function to make the POST request
     const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       // Convert the postData object to JSON
       body: JSON.stringify(postData)
     });
@@ -23,7 +20,7 @@ async function performPostRequest () {
     }
     // Parse the response as JSON
     const data = await response.json();
-    // Handle the data from the response
+
     console.log('POST request successful:', data);
   } catch (error) {
     // Handle errors during the request
