@@ -5,7 +5,7 @@ import authPlugin from './plugins/auth.js';
 import recipesPlugin from './routes/recipes.js';
 import ordersPlugin from './routes/orders.js';
 
-const options = {
+const serverOptions = {
   logger: true,
   ajv: {
     customOptions: {
@@ -38,4 +38,4 @@ async function appPlugin (app, opts) {
 }
 
 export default appPlugin;
-export { options };
+export { serverOptions as options };

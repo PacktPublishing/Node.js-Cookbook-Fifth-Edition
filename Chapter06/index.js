@@ -1,8 +1,10 @@
 import { fastify } from 'fastify';
 
-const app = fastify({
+const serverOptions = {
   logger: true
-});
+};
+
+const app = fastify(serverOptions);
 
 app.get('/', async function homeHandler () {
   return {
