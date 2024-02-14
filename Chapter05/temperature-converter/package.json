@@ -1,0 +1,28 @@
+{
+  "name": "temperature-converter",
+  "version": "0.1.0",
+  "description": "Converts temperatures between Fahrenheit and Celsius.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "semistandard *.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "temperature",
+    "converter",
+    "utility"
+  ],
+  "author": "Beth Griggs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BethGriggs/temperature-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BethGriggs/temperature-converter/issues"
+  },
+  "homepage": "https://github.com/BethGriggs/temperature-converter#readme",
+  "devDependencies": {
+    "semistandard": "17.0.0"
+  }
+}
