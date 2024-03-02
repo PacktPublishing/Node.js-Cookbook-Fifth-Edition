@@ -22,7 +22,7 @@ test('GET /', async function (t) {
   });
 });
 
-test('Only a Chef can create a recipe', async function (t) {
+test('An unknown user cannot can create a recipe', async function (t) {
   const testApiKey = 'test-suite-api-key';
   const app = await buildApplication({
     API_KEY: testApiKey
@@ -43,6 +43,19 @@ test('Only a Chef can create a recipe', async function (t) {
     }
   });
   strictEqual(notChefResponse.statusCode, 401);
+});
+
+test('Only a Chef can create a recipe', async function (t) {
+  const testApiKey = 'test-suite-api-key';
+  const app = await buildApplication({
+    API_KEY: testApiKey
+  });
+
+  t.after(async function () {
+    await app.close();
+  });
+
+  const pizzaRecipe = { name: 'Pizza', country: 'ITA', price: 8, order: 2 };
 
   const response = await app.inject({
     method: 'POST',
