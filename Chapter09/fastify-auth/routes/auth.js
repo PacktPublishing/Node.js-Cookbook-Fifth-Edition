@@ -18,6 +18,8 @@ async function routes (fastify, options) {
     // For demo purposes, use plain text password comparison
     if (user && password === user.password) {
       request.session.user = { username: user.username };
+      await request.session.save();
+
       return reply.view('index.ejs', { user: request.session.user });
     } else {
       return reply.view('login.ejs', { fail: true });
