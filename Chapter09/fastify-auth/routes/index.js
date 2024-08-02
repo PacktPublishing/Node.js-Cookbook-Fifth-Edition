@@ -1,6 +1,7 @@
 async function routes (fastify, options) {
   fastify.get('/', async (request, reply) => {
-    return reply.view('index.ejs');
+    const user = request.session.user;
+    return reply.view('index.ejs', { user: user });
   });
 }
 
