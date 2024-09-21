@@ -86,7 +86,11 @@ async function ordersPlugin (app, opts) {
     config: { auth: true },
     schema: {
       params: {
-        orderId: { type: 'string', minLength: 24, maxLength: 24 }
+        type: 'object',
+        required: ['orderId'],
+        properties: {
+          orderId: { type: 'string', minLength: 24, maxLength: 24 }
+        }
       }
     },
     handler: async function markOrderAsDone (request, reply) {

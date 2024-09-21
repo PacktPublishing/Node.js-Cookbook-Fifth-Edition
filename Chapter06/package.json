@@ -20,10 +20,10 @@
   "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
   "license": "MIT",
   "dependencies": {
-    "@fastify/env": "^4.2.0",
-    "@fastify/mongodb": "^8.0.0",
-    "fastify": "^4.22.2",
-    "fastify-plugin": "^4.5.1"
+    "@fastify/env": "^5.0.0",
+    "@fastify/mongodb": "^9.0.0",
+    "fastify": "^5.0.0",
+    "fastify-plugin": "^5.0.0"
   },
   "devDependencies": {
     "semistandard": "^17.0.0"
