@@ -14,8 +14,8 @@ async function main () {
     console.log('Connected as id ' + connection.threadId);
     if (process.argv[2]) {
       await connection.query(
-          `INSERT INTO tasks.tasks (task) VALUES (?);`,
-          [process.argv[2]]
+        'INSERT INTO tasks.tasks (task) VALUES (?);',
+        [process.argv[2]]
       );
     }
     const [results] = await connection.query('SELECT * FROM tasks.tasks;');
