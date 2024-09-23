@@ -1,5 +1,5 @@
-const fs = require("fs");
-const file = "./file.txt";
+const fs = require('node:fs');
+const file = './file.txt';
 
 fs.chmodSync(
   file,
@@ -9,4 +9,3 @@ fs.chmodSync(
     fs.constants.S_IWGRP |
     fs.constants.S_IROTH
 );
-

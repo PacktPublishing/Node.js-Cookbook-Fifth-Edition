@@ -5,6 +5,6 @@ process.stdin.on("data", (data) => {
   if (name !== "") {
     process.stdout.write(`Hello ${name}!`);
   } else {
-    process.stderr.write("Input was empty.");
+    process.stderr.write("Input was empty.\n");
   }
 });
