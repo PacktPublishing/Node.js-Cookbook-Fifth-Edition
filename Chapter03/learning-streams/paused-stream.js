@@ -6,7 +6,7 @@ rs.on('readable', () => {
   // Read data
   let data = rs.read();
   while (data !== null) {
-    console.log('Read chunk:', data);
+    console.log('Read chunk:', data.toString());
     data = rs.read();
   }
 });
