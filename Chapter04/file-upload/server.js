@@ -19,7 +19,9 @@ http
 
     error(405, res);
   })
-  .listen(3000);
+  .listen(3000, () => {
+    console.log('Server listening on http://localhost:3000');
+  });
 
 function get (res) {
   res.writeHead(200, {
@@ -40,7 +42,8 @@ function post (req, res) {
   }
 
   const form = formidable({
-    multiples: true, uploadDir: './uploads'
+    multiples: true,
+    uploadDir: './uploads'
   });
 
   form.parse(req, (err, fields, files) => {
