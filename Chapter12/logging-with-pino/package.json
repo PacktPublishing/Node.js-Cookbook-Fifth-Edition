@@ -1,5 +1,5 @@
 {
-  "name": "express-pino-app",
+  "name": "logging-with-pino",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2",
-    "express-pino-logger": "^7.0.0",
-    "pino": "^9.1.0"
+    "pino": "^9.4.0"
   }
 }

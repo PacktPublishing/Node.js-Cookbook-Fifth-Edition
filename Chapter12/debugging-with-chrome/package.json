@@ -1,5 +1,5 @@
 {
-  "name": "chapter12",
+  "name": "debugging-with-chrome",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.21.0"
   }
 }

@@ -1,8 +1,6 @@
 foo().then(
   () => console.log('success'),
-
   (error) => console.error(error.stack)
-
 );
 
 async function foo () {
@@ -11,6 +9,5 @@ async function foo () {
 
 async function bar () {
   await Promise.resolve();
-
   throw new Error('Fail');
 }
